@@ -1,18 +1,18 @@
 import { useDispatch, useSelector } from "react-redux";
 import RefreshSvg from "../../assets/RefreshSvg";
-import { reset, selectedApple } from "../../features/treeSlice";
+import { reset, selectedGoBasket } from "../../features/treeSlice";
 
 function RefreshBtn() {
   const dispatch = useDispatch();
-  const apple = useSelector(selectedApple);
+  const goBasket = useSelector(selectedGoBasket);
 
   const refresh = () => {
     dispatch(reset());
   };
   return (
     <button
-      disabled={apple == false}
-      className={`refresh-btn ${!apple && "disabled"}`}
+      disabled={!goBasket}
+      className={`refresh-btn ${!goBasket && "disabled"}`}
       onClick={refresh}
     >
       <RefreshSvg />
