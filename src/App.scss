@@ -1,0 +1,174 @@
+* {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.App {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://cdn.pixabay.com/photo/2018/05/03/15/39/panoramic-3371639_960_720.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.container {
+  width: 90%;
+  max-width: 1340px;
+  margin: 0px auto;
+}
+.home {
+  display: flex;
+  height: 100vh;
+  justify-content: space-around;
+  align-items: center;
+  .tree {
+    display: flex;
+    position: relative;
+    height: 650px;
+  }
+  .refresh-btn {
+    height: 40px;
+    padding: 5px;
+    background: white;
+    border: 1px solid white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .disabled {
+    opacity: 0.5;
+  }
+  .shake-btn {
+    height: 40px;
+    padding: 5px;
+    margin-left: 15px;
+    background: white;
+    border: 1px solid white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .btn-list {
+    display: flex;
+    gap: 3px;
+    margin-top: 10px;
+    position: absolute;
+    top: 0;
+    left: 20;
+  }
+  .cov {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+  }
+  .basket {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    margin-bottom: 10px;
+  }
+
+  .apple-list {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: absolute;
+    right: 50%;
+    margin-bottom: 10px;
+    transform: translate(50%, 50%);
+    li {
+      cursor: pointer;
+      position: absolute;
+      transition: all var(--time);
+    }
+  }
+  .apple-list li:nth-child(1) {
+    top: 23px;
+    left: 20px;
+    animation: elma1 6s linear;
+  }
+  .apple-list li:nth-child(2) {
+    bottom: 5px;
+  }
+  .apple-list li:nth-child(3) {
+    top: 40px;
+  }
+  .apple-list li:nth-child(3) {
+    margin-top: 40px;
+  }
+  .apple-list li:nth-child(4) {
+    right: -88px;
+  }
+  .apple-list li:nth-child(5) {
+    top: 25px;
+    right: 0px;
+  }
+  .apple-list li:nth-child(6) {
+    top: 100px;
+    right: 300px;
+  }
+  .apple-list li:nth-child(7) {
+    top: -40px;
+    right: -19px;
+  }
+  .apple-list li:nth-child(8) {
+    top: 67px;
+    right: 50px;
+  }
+}
+.tree_bot {
+  transform-origin: bottom;
+  @keyframes tree-bot {
+    0% {
+      transform: rotateZ(0) translateX(0) translateY(-1px);
+    }
+    50% {
+      transform: rotateZ(-8deg) translateX(0px) translateY(-1px);
+    }
+    75% {
+      transform: rotateZ(8deg) translateX(0px) translateY(-1px);
+    }
+    100% {
+      transform: rotateZ(0) translateX(0) translateY(-1px);
+    }
+  }
+  animation: tree-bot 3s infinite;
+}
+.apple {
+  position: absolute;
+  transform: translate(50%, 290%) !important;
+  transition: ease-in-out transform 5s;
+  animation: apple 3s infinite !important;
+}
+
+.appleGround {
+  position: absolute;
+  margin-top: 50px;
+  animation: te 3s infinite !important;
+  left: 160px;
+  bottom: -150px;
+  z-index: 1;
+}
+.basketapple {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 10px;
+  left: 4px;
+  padding: 2px;
+}
+
+.ground {
+  opacity: 0;
+  transition: ease-in-out opacity 200ms;
+}
