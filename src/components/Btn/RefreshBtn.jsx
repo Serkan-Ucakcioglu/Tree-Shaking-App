@@ -11,6 +11,7 @@ function RefreshBtn() {
   };
   return (
     <button
+      id="refresh-btn"
       disabled={!goBasket}
       className={`refresh-btn ${!goBasket && "disabled"}`}
       onClick={refresh}

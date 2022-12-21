@@ -7,6 +7,7 @@ function ShakeBtn() {
   const apple = useSelector(selectedApple);
   return (
     <button
+      id="shake-btn"
       onClick={shakeTree}
       disabled={apple}
       className={`shake-btn ${apple && "disabled"}`}
